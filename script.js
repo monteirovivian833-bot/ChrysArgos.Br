@@ -1,85 +1,171 @@
-const menuBtn = document.getElementById("menuBtn");
-const nav = document.getElementById("nav");
+/* =========================
+   MENU MOBILE
+========================= */
 
-menuBtn.addEventListener("click", () => {
-  nav.classList.toggle("open");
+const menuButton = document.getElementById("menuButton");
+const navigation = document.getElementById("navigation");
 
-  const aberto = nav.classList.contains("open");
+if (menuButton && navigation) {
 
-  menuBtn.setAttribute("aria-expanded", aberto);
-});
+  menuButton.addEventListener("click", () => {
 
-
-/* Fechar menu ao clicar em um link */
-
-document.querySelectorAll("nav a").forEach(link => {
-
-  link.addEventListener("click", () => {
-
-    nav.classList.remove("open");
+    navigation.classList.toggle("open");
 
   });
-
-});
-
-
-/* Pesquisa */
-
-const searchInput = document.getElementById("searchInput");
-const searchBtn = document.getElementById("searchBtn");
-const searchResult = document.getElementById("searchResult");
-
-function pesquisar() {
-
-  const texto = searchInput.value.trim();
-
-  if (!texto) {
-
-    searchResult.textContent =
-      "Digite algo para pesquisar no ChrysArgos.Br.";
-
-    return;
-  }
-
-  searchResult.textContent =
-    `🔎 Você pesquisou por: "${texto}"`;
 
 }
 
 
-searchBtn.addEventListener("click", pesquisar);
+/* Fechar menu ao clicar */
 
+document.querySelectorAll("#navigation a").forEach(link => {
 
-searchInput.addEventListener("keydown", (event) => {
+  link.addEventListener("click", () => {
 
-  if (event.key === "Enter") {
-
-    pesquisar();
-
-  }
-
-});
-
-
-/* Botões das teorias */
-
-document.querySelectorAll(".theory-grid button").forEach(botao => {
-
-  botao.addEventListener("click", () => {
-
-    botao.textContent = "Em breve ✦";
+    navigation.classList.remove("open");
 
   });
 
 });
 
 
-/* Ano automático no rodapé */
+/* =========================
+   PLAYER
+========================= */
 
-const year = document.getElementById("year");
+const player = document.getElementById("player");
+const playerTitle = document.getElementById("playerTitle");
+const closePlayer = document.getElementById("closePlayer");
+
+function abrirPlayer(titulo) {
+
+  if (!player) return;
+
+  playerTitle.textContent = titulo;
+
+  player.classList.remove("hidden");
+
+  player.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+
+}
+
+
+document.querySelectorAll("[data-title]").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const titulo =
+      button.getAttribute("data-title");
+
+    abrirPlayer(titulo);
+
+  });
+
+});
+
+
+/* Fechar player */
+
+if (closePlayer) {
+
+  closePlayer.addEventListener("click", () => {
+
+    player.classList.add("hidden");
+
+  });
+
+}
+
+
+/* =========================
+   TEMPORADAS
+========================= */
+
+const seasonButtons =
+  document.querySelectorAll(".season-tab");
+
+seasonButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    seasonButtons.forEach(item => {
+
+      item.classList.remove("active");
+
+    });
+
+    button.classList.add("active");
+
+  });
+
+});
+
+
+/* =========================
+   ANO DO SITE
+========================= */
+
+const year =
+  document.getElementById("year");
 
 if (year) {
 
-  year.textContent = new Date().getFullYear();
+  year.textContent =
+    new Date().getFullYear();
 
-                         }
+}
+
+
+/* =========================
+   ANIMAÇÃO AO APARECER
+========================= */
+
+const animatedElements =
+  document.querySelectorAll(
+    ".episode-card, .movie-card, .character-card, .news-grid article, .category-card"
+  );
+
+const observer =
+  new IntersectionObserver(
+    entries => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.style.opacity = "1";
+
+          entry.target.style.transform =
+            "translateY(0)";
+
+          observer.unobserve(
+            entry.target
+          );
+
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.08
+    }
+  );
+
+
+animatedElements.forEach(element => {
+
+  element.style.opacity = "0";
+
+  element.style.transform =
+    "translateY(20px)";
+
+  element.style.transition =
+    "opacity .5s ease, transform .5s ease";
+
+  observer.observe(element);
+
+});
