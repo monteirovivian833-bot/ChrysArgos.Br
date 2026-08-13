@@ -3,754 +3,446 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description"
-    content="ChrysArgos.Br — episódios, filmes, personagens e novidades de Miraculous.">
-
+  <meta name="description" content="ChrysArgos.Br — episódios, filmes, personagens e novidades.">
   <title>ChrysArgos.Br</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- ================= HEADER ================= -->
+<header class="header">
 
-  <header class="header">
+  <a href="#home" class="logo">
+    ✦ Chrys<span>Argos</span><b>.Br</b>
+  </a>
 
-    <a href="#inicio" class="logo">
-      ✦ <span>Chrys</span>Argos<span class="br">.Br</span>
-    </a>
+  <button id="menuButton" class="menu-button">☰</button>
 
-    <button
-      id="menuButton"
-      class="menu-button"
-      aria-label="Abrir menu">
-      ☰
-    </button>
+  <nav id="navigation">
+    <a href="#home">Início</a>
+    <a href="#series">Séries</a>
+    <a href="#filmes">Filmes</a>
+    <a href="#novidades">Novidades</a>
+  </nav>
 
-    <nav id="navigation">
-
-      <a href="#inicio">Início</a>
-
-      <a href="#episodios">Episódios</a>
-
-      <a href="#filmes">Filmes</a>
-
-      <a href="#personagens">Personagens</a>
-
-      <a href="#novidades">Novidades</a>
-
-    </nav>
-
-  </header>
+</header>
 
 
-  <main>
+<main>
 
-    <!-- ================= HERO ================= -->
+  <!-- DESTAQUE -->
 
-    <section id="inicio" class="hero">
+  <section id="home" class="hero">
 
-      <div class="hero-background"></div>
+    <div class="hero-content">
 
-      <div class="hero-content">
+      <span>🦋 CHRYSARGOS.BR</span>
 
-        <span class="hero-label">
-          🦋 CHRYSARGOS.BR
-        </span>
+      <h1>
+        Miraculous
+        <strong>Ladybug & Cat Noir</strong>
+      </h1>
 
-        <h1>
-          O universo de
-          <strong>Miraculous</strong>
-          em um só lugar.
-        </h1>
+      <p>
+        Episódios, temporadas, filmes e novidades
+        em um só lugar.
+      </p>
 
-        <p>
-          Episódios, filmes, personagens,
-          novidades e muito mais.
-        </p>
+      <a href="#series" class="main-button">
+        ▶ Explorar episódios
+      </a>
 
-        <div class="hero-buttons">
+    </div>
 
-          <a
-            href="#episodios"
-            class="button button-primary">
-            ▶ Explorar episódios
-          </a>
+  </section>
 
-          <a
-            href="#filmes"
-            class="button button-secondary">
-            🎬 Ver filmes
-          </a>
+
+  <!-- ÚLTIMOS EPISÓDIOS -->
+
+  <section class="section">
+
+    <div class="section-title">
+
+      <span>RECENTES</span>
+
+      <h2>Últimos episódios</h2>
+
+    </div>
+
+    <div class="episode-grid">
+
+      <article class="episode-card">
+
+        <div class="episode-cover cover-1">
+
+          <small>T1 • EP01</small>
+
+          <button
+            class="play-button"
+            data-title="Miraculous — Temporada 1, Episódio 1">
+            ▶
+          </button>
 
         </div>
 
-      </div>
+        <div class="episode-info">
 
-      <div class="hero-symbol">
-        🦋
-      </div>
+          <h3>Episódio 1</h3>
 
-    </section>
+          <p>Temporada 1</p>
 
+          <button
+            class="watch-button"
+            data-title="Miraculous — Temporada 1, Episódio 1">
+            Assistir
+          </button>
 
-    <!-- ================= DESTAQUES ================= -->
+        </div>
 
-    <section class="section">
+      </article>
 
-      <div class="section-heading">
 
-        <span>DESTAQUES</span>
+      <article class="episode-card">
 
-        <h2>
-          O que você quer assistir?
-        </h2>
+        <div class="episode-cover cover-2">
 
-      </div>
+          <small>T1 • EP02</small>
 
+          <button
+            class="play-button"
+            data-title="Miraculous — Temporada 1, Episódio 2">
+            ▶
+          </button>
 
-      <div class="category-grid">
+        </div>
 
-        <a href="#episodios" class="category-card">
+        <div class="episode-info">
 
-          <div class="category-icon">
-            📺
-          </div>
+          <h3>Episódio 2</h3>
 
-          <h3>
-            Episódios
-          </h3>
+          <p>Temporada 1</p>
 
-          <p>
-            Explore as temporadas.
-          </p>
+          <button
+            class="watch-button"
+            data-title="Miraculous — Temporada 1, Episódio 2">
+            Assistir
+          </button>
 
-        </a>
+        </div>
 
+      </article>
 
-        <a href="#filmes" class="category-card">
 
-          <div class="category-icon">
-            🎬
-          </div>
+      <article class="episode-card">
 
-          <h3>
-            Filmes
-          </h3>
+        <div class="episode-cover cover-3">
 
-          <p>
-            Confira os filmes.
-          </p>
+          <small>T1 • EP03</small>
 
-        </a>
+          <button
+            class="play-button"
+            data-title="Miraculous — Temporada 1, Episódio 3">
+            ▶
+          </button>
 
+        </div>
 
-        <a href="#personagens" class="category-card">
+        <div class="episode-info">
 
-          <div class="category-icon">
-            🦸
-          </div>
+          <h3>Episódio 3</h3>
 
-          <h3>
-            Personagens
-          </h3>
+          <p>Temporada 1</p>
 
-          <p>
-            Conheça os personagens.
-          </p>
+          <button
+            class="watch-button"
+            data-title="Miraculous — Temporada 1, Episódio 3">
+            Assistir
+          </button>
 
-        </a>
+        </div>
 
-      </div>
+      </article>
 
-    </section>
+    </div>
 
+  </section>
 
-    <!-- ================= EPISÓDIOS ================= -->
 
-    <section id="episodios" class="section">
+  <!-- SÉRIES -->
 
-      <div class="section-heading">
+  <section id="series" class="section">
 
-        <span>EPISÓDIOS</span>
+    <div class="section-title">
 
-        <h2>
-          Continue sua aventura
-        </h2>
+      <span>SÉRIES</span>
 
-        <p>
-          Escolha uma temporada e encontre
-          seu episódio.
-        </p>
+      <h2>Miraculous</h2>
 
-      </div>
+      <p>Escolha uma temporada.</p>
 
+    </div>
 
-      <!-- TEMPORADAS -->
 
-      <div class="season-tabs">
+    <div class="season-list">
 
-        <button class="season-tab active">
-          Temporada 1
-        </button>
+      <button class="season active">
+        Temporada 1
+      </button>
 
-        <button class="season-tab">
-          Temporada 2
-        </button>
+      <button class="season">
+        Temporada 2
+      </button>
 
-        <button class="season-tab">
-          Temporada 3
-        </button>
+      <button class="season">
+        Temporada 3
+      </button>
 
-        <button class="season-tab">
-          Temporada 4
-        </button>
+      <button class="season">
+        Temporada 4
+      </button>
 
-        <button class="season-tab">
-          Temporada 5
-        </button>
+      <button class="season">
+        Temporada 5
+      </button>
 
-      </div>
+    </div>
 
 
-      <!-- EPISÓDIOS -->
+    <div class="episode-list">
 
-      <div class="episode-grid">
+      <article class="episode-row">
 
-
-        <article class="episode-card">
-
-          <div class="episode-cover cover-one">
-
-            <span>
-              T1 • EP1
-            </span>
-
-            <button
-              class="play-button"
-              data-title="Episódio 1">
-              ▶
-            </button>
-
-          </div>
-
-          <div class="episode-info">
-
-            <h3>
-              Episódio 1
-            </h3>
-
-            <p>
-              Uma nova aventura começa.
-            </p>
-
-            <button
-              class="watch-button"
-              data-title="Episódio 1">
-              Assistir
-            </button>
-
-          </div>
-
-        </article>
-
-
-        <article class="episode-card">
-
-          <div class="episode-cover cover-two">
-
-            <span>
-              T1 • EP2
-            </span>
-
-            <button
-              class="play-button"
-              data-title="Episódio 2">
-              ▶
-            </button>
-
-          </div>
-
-          <div class="episode-info">
-
-            <h3>
-              Episódio 2
-            </h3>
-
-            <p>
-              Um novo desafio surge.
-            </p>
-
-            <button
-              class="watch-button"
-              data-title="Episódio 2">
-              Assistir
-            </button>
-
-          </div>
-
-        </article>
-
-
-        <article class="episode-card">
-
-          <div class="episode-cover cover-three">
-
-            <span>
-              T1 • EP3
-            </span>
-
-            <button
-              class="play-button"
-              data-title="Episódio 3">
-              ▶
-            </button>
-
-          </div>
-
-          <div class="episode-info">
-
-            <h3>
-              Episódio 3
-            </h3>
-
-            <p>
-              O mistério continua.
-            </p>
-
-            <button
-              class="watch-button"
-              data-title="Episódio 3">
-              Assistir
-            </button>
-
-          </div>
-
-        </article>
-
-
-        <article class="episode-card">
-
-          <div class="episode-cover cover-four">
-
-            <span>
-              T1 • EP4
-            </span>
-
-            <button
-              class="play-button"
-              data-title="Episódio 4">
-              ▶
-            </button>
-
-          </div>
-
-          <div class="episode-info">
-
-            <h3>
-              Episódio 4
-            </h3>
-
-            <p>
-              Uma ameaça inesperada aparece.
-            </p>
-
-            <button
-              class="watch-button"
-              data-title="Episódio 4">
-              Assistir
-            </button>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= PLAYER ================= -->
-
-    <section id="player" class="player-section hidden">
-
-      <div class="player-header">
+        <div class="episode-number">
+          01
+        </div>
 
         <div>
 
-          <span>
-            AGORA ASSISTINDO
-          </span>
+          <h3>Episódio 1</h3>
 
-          <h2 id="playerTitle">
-            Episódio
-          </h2>
+          <p>
+            Temporada 1 • Episódio 1
+          </p>
 
         </div>
 
-        <button id="closePlayer">
-          ✕
+        <button
+          class="row-watch"
+          data-title="Miraculous — T1 EP01">
+          ▶ Assistir
         </button>
 
-      </div>
+      </article>
 
 
-      <div class="video-container">
+      <article class="episode-row">
 
-        <!--
-          COLOQUE AQUI O PLAYER/EMBED AUTORIZADO
-          QUANDO FOR ADICIONAR O CONTEÚDO.
-        -->
+        <div class="episode-number">
+          02
+        </div>
 
-        <div class="video-placeholder">
+        <div>
 
-          <div>
-            <span>▶</span>
+          <h3>Episódio 2</h3>
 
-            <h3>
-              Player do episódio
-            </h3>
-
-            <p>
-              O conteúdo autorizado será exibido aqui.
-            </p>
-          </div>
+          <p>
+            Temporada 1 • Episódio 2
+          </p>
 
         </div>
 
-      </div>
+        <button
+          class="row-watch"
+          data-title="Miraculous — T1 EP02">
+          ▶ Assistir
+        </button>
 
-    </section>
+      </article>
 
 
-    <!-- ================= FILMES ================= -->
+      <article class="episode-row">
 
-    <section id="filmes" class="section movies-section">
+        <div class="episode-number">
+          03
+        </div>
 
-      <div class="section-heading">
+        <div>
 
-        <span>FILMES</span>
+          <h3>Episódio 3</h3>
 
-        <h2>
-          Noite de cinema
+          <p>
+            Temporada 1 • Episódio 3
+          </p>
+
+        </div>
+
+        <button
+          class="row-watch"
+          data-title="Miraculous — T1 EP03">
+          ▶ Assistir
+        </button>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- PLAYER -->
+
+  <section id="player" class="player hidden">
+
+    <div class="player-top">
+
+      <div>
+
+        <span>ASSISTINDO AGORA</span>
+
+        <h2 id="playerTitle">
+          Episódio
         </h2>
 
       </div>
 
-
-      <div class="movie-grid">
-
-
-        <article class="movie-card">
-
-          <div class="movie-cover movie-one">
-
-            <span>
-              FILME
-            </span>
-
-            <button
-              class="play-button"
-              data-title="Filme 1">
-              ▶
-            </button>
-
-          </div>
-
-          <div class="movie-info">
-
-            <h3>
-              Miraculous: O Filme
-            </h3>
-
-            <p>
-              Uma aventura cinematográfica
-              no universo de Miraculous.
-            </p>
-
-            <button
-              class="watch-button"
-              data-title="Filme 1">
-              Assistir
-            </button>
-
-          </div>
-
-        </article>
-
-
-        <article class="movie-card">
-
-          <div class="movie-cover movie-two">
-
-            <span>
-              FILME
-            </span>
-
-            <button
-              class="play-button"
-              data-title="Filme 2">
-              ▶
-            </button>
-
-          </div>
-
-          <div class="movie-info">
-
-            <h3>
-              Especial
-            </h3>
-
-            <p>
-              Uma aventura especial.
-            </p>
-
-            <button
-              class="watch-button"
-              data-title="Filme 2">
-              Assistir
-            </button>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= PERSONAGENS ================= -->
-
-    <section id="personagens" class="section">
-
-      <div class="section-heading">
-
-        <span>PERSONAGENS</span>
-
-        <h2>
-          Conheça o elenco
-        </h2>
-
-      </div>
-
-
-      <div class="character-grid">
-
-
-        <article class="character-card">
-
-          <div class="character-image ladybug">
-            🐞
-          </div>
-
-          <div>
-
-            <small>
-              LADYBUG
-            </small>
-
-            <h3>
-              Marinette
-            </h3>
-
-          </div>
-
-        </article>
-
-
-        <article class="character-card">
-
-          <div class="character-image cat">
-            🐈‍⬛
-          </div>
-
-          <div>
-
-            <small>
-              CAT NOIR
-            </small>
-
-            <h3>
-              Adrien
-            </h3>
-
-          </div>
-
-        </article>
-
-
-        <article class="character-card">
-
-          <div class="character-image cerise">
-            🦋
-          </div>
-
-          <div>
-
-            <small>
-              MISTÉRIO
-            </small>
-
-            <h3>
-              Cerise
-            </h3>
-
-          </div>
-
-        </article>
-
-
-        <article class="character-card">
-
-          <div class="character-image argos">
-            🦚
-          </div>
-
-          <div>
-
-            <small>
-              PAVÃO
-            </small>
-
-            <h3>
-              Argos
-            </h3>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= NOVIDADES ================= -->
-
-    <section id="novidades" class="section news-section">
-
-      <div class="section-heading">
-
-        <span>NOVIDADES</span>
-
-        <h2>
-          Fique por dentro
-        </h2>
-
-      </div>
-
-
-      <div class="news-grid">
-
-        <article>
-
-          <span>
-            ✦ NOVIDADE
-          </span>
-
-          <h3>
-            Novos conteúdos chegando
-          </h3>
-
-          <p>
-            Acompanhe as novidades do
-            ChrysArgos.Br.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <span>
-            🔮 TEORIA
-          </span>
-
-          <h3>
-            O mistério de Cerise
-          </h3>
-
-          <p>
-            Novas teorias podem mudar
-            tudo o que sabemos.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <span>
-            🦚 ESPECIAL
-          </span>
-
-          <h3>
-            O legado do Pavão
-          </h3>
-
-          <p>
-            Descubra mais sobre um dos
-            Miraculous mais misteriosos.
-          </p>
-
-        </article>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- ================= FOOTER ================= -->
-
-  <footer>
-
-    <div>
-
-      <a href="#inicio" class="logo">
-        ✦ <span>Chrys</span>Argos<span>.Br</span>
-      </a>
-
-      <p>
-        O universo de Miraculous em um só lugar.
-      </p>
+      <button id="closePlayer">
+        ✕
+      </button>
 
     </div>
 
 
-    <div class="footer-links">
+    <div class="video-box">
 
-      <a href="#episodios">
-        Episódios
-      </a>
+      <!--
+        PLAYER DO CONTEÚDO AUTORIZADO
 
-      <a href="#filmes">
-        Filmes
-      </a>
+        Quando tivermos a hospedagem do seu vídeo,
+        colocaremos o player aqui.
+      -->
 
-      <a href="#personagens">
-        Personagens
-      </a>
+      <div class="video-message">
+
+        <div>▶</div>
+
+        <h3>Player</h3>
+
+        <p>
+          O vídeo autorizado aparecerá aqui.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FILMES -->
+
+  <section id="filmes" class="section">
+
+    <div class="section-title">
+
+      <span>FILMES</span>
+
+      <h2>Filmes e especiais</h2>
 
     </div>
 
 
-    <p class="copyright">
-      © <span id="year"></span> ChrysArgos.Br
-    </p>
+    <div class="movie-grid">
 
-  </footer>
+      <article class="movie-card">
+
+        <div class="movie-cover">
+
+          <span>FILME</span>
+
+          <button
+            class="play-button"
+            data-title="Miraculous — Filme">
+            ▶
+          </button>
+
+        </div>
+
+        <div class="movie-info">
+
+          <h3>Miraculous — O Filme</h3>
+
+          <p>
+            Filme do universo de Miraculous.
+          </p>
+
+          <button
+            class="watch-button"
+            data-title="Miraculous — O Filme">
+            Assistir
+          </button>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
 
 
-  <!-- ================= SCRIPT ================= -->
+  <!-- NOVIDADES -->
 
-  <script src="script.js"></script>
+  <section id="novidades" class="section">
+
+    <div class="section-title">
+
+      <span>NOVIDADES</span>
+
+      <h2>O que há de novo?</h2>
+
+    </div>
+
+    <div class="news">
+
+      <article>
+        <span>🦋 NOVO</span>
+        <h3>ChrysArgos.Br está chegando!</h3>
+        <p>
+          Novos episódios e conteúdos serão
+          adicionados em breve.
+        </p>
+      </article>
+
+      <article>
+        <span>🔮 TEORIA</span>
+        <h3>Os mistérios continuam...</h3>
+        <p>
+          Descubra teorias e novidades
+          do universo.
+        </p>
+      </article>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="logo">
+    ✦ Chrys<span>Argos</span><b>.Br</b>
+  </div>
+
+  <p>
+    © <span id="year"></span> ChrysArgos.Br
+  </p>
+
+</footer>
+
+
+<script src="script.js"></script>
 
 </body>
-  </html>
+</html>
