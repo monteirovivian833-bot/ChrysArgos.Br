@@ -1,9 +1,16 @@
+const menuButton = document.getElementById("menuButton");
+const navigation = document.getElementById("navigation");
+
+const player = document.getElementById("player");
+const playerTitle = document.getElementById("playerTitle");
+const closePlayer = document.getElementById("closePlayer");
+
+const videoBox = document.querySelector(".video-box");
+
+
 /* =========================
    MENU MOBILE
 ========================= */
-
-const menuButton = document.getElementById("menuButton");
-const navigation = document.getElementById("navigation");
 
 if (menuButton && navigation) {
 
@@ -15,8 +22,6 @@ if (menuButton && navigation) {
 
 }
 
-
-/* Fechar menu ao clicar */
 
 document.querySelectorAll("#navigation a").forEach(link => {
 
@@ -30,12 +35,30 @@ document.querySelectorAll("#navigation a").forEach(link => {
 
 
 /* =========================
-   PLAYER
+   EPISÓDIOS
 ========================= */
 
-const player = document.getElementById("player");
-const playerTitle = document.getElementById("playerTitle");
-const closePlayer = document.getElementById("closePlayer");
+/*
+  Aqui vamos colocar os vídeos autorizados.
+
+  Exemplo:
+
+  const videos = {
+    "Miraculous — T1 EP01": "SEU_LINK_DO_VIDEO"
+  };
+
+*/
+
+const videos = {
+
+  // "Miraculous — T1 EP01": "COLOQUE_O_LINK_AQUI",
+
+};
+
+
+/* =========================
+   ABRIR PLAYER
+========================= */
 
 function abrirPlayer(titulo) {
 
@@ -45,6 +68,60 @@ function abrirPlayer(titulo) {
 
   player.classList.remove("hidden");
 
+  /*
+    Se existir um vídeo cadastrado,
+    cria o player HTML5.
+  */
+
+  const videoURL = videos[titulo];
+
+  if (videoURL) {
+
+    videoBox.innerHTML = `
+      
+      <video
+        controls
+        playsinline
+        preload="metadata"
+        style="
+          width:100%;
+          height:100%;
+          display:block;
+          background:#000;
+        "
+      >
+
+        <source
+          src="${videoURL}"
+          type="video/mp4"
+        >
+
+        Seu navegador não conseguiu reproduzir este vídeo.
+
+      </video>
+
+    `;
+
+  } else {
+
+    videoBox.innerHTML = `
+
+      <div class="video-message">
+
+        <div>▶</div>
+
+        <h3>Player pronto</h3>
+
+        <p>
+          O vídeo autorizado ainda não foi conectado.
+        </p>
+
+      </div>
+
+    `;
+
+  }
+
   player.scrollIntoView({
     behavior: "smooth",
     block: "center"
@@ -53,27 +130,42 @@ function abrirPlayer(titulo) {
 }
 
 
-document.querySelectorAll("[data-title]").forEach(button => {
+/* =========================
+   BOTÕES ASSISTIR
+========================= */
 
-  button.addEventListener("click", () => {
+document
+  .querySelectorAll("[data-title]")
+  .forEach(button => {
 
-    const titulo =
-      button.getAttribute("data-title");
+    button.addEventListener("click", () => {
 
-    abrirPlayer(titulo);
+      const titulo =
+        button.getAttribute("data-title");
+
+      abrirPlayer(titulo);
+
+    });
 
   });
 
-});
 
-
-/* Fechar player */
+/* =========================
+   FECHAR PLAYER
+========================= */
 
 if (closePlayer) {
 
   closePlayer.addEventListener("click", () => {
 
     player.classList.add("hidden");
+
+    /*
+      Limpa o player para parar
+      o vídeo quando fechar.
+    */
+
+    videoBox.innerHTML = "";
 
   });
 
@@ -84,20 +176,20 @@ if (closePlayer) {
    TEMPORADAS
 ========================= */
 
-const seasonButtons =
-  document.querySelectorAll(".season-tab");
+const seasons =
+  document.querySelectorAll(".season");
 
-seasonButtons.forEach(button => {
+seasons.forEach(season => {
 
-  button.addEventListener("click", () => {
+  season.addEventListener("click", () => {
 
-    seasonButtons.forEach(item => {
+    seasons.forEach(item => {
 
       item.classList.remove("active");
 
     });
 
-    button.classList.add("active");
+    season.classList.add("active");
 
   });
 
@@ -105,7 +197,7 @@ seasonButtons.forEach(button => {
 
 
 /* =========================
-   ANO DO SITE
+   ANO
 ========================= */
 
 const year =
@@ -116,56 +208,4 @@ if (year) {
   year.textContent =
     new Date().getFullYear();
 
-}
-
-
-/* =========================
-   ANIMAÇÃO AO APARECER
-========================= */
-
-const animatedElements =
-  document.querySelectorAll(
-    ".episode-card, .movie-card, .character-card, .news-grid article, .category-card"
-  );
-
-const observer =
-  new IntersectionObserver(
-    entries => {
-
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-          entry.target.style.opacity = "1";
-
-          entry.target.style.transform =
-            "translateY(0)";
-
-          observer.unobserve(
-            entry.target
-          );
-
-        }
-
-      });
-
-    },
-    {
-      threshold: 0.08
-    }
-  );
-
-
-animatedElements.forEach(element => {
-
-  element.style.opacity = "0";
-
-  element.style.transform =
-    "translateY(20px)";
-
-  element.style.transition =
-    "opacity .5s ease, transform .5s ease";
-
-  observer.observe(element);
-
-});
+   }
