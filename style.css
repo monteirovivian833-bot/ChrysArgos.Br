@@ -1,14 +1,13 @@
 :root {
-  --bg: #070414;
-  --bg2: #0e0820;
-  --card: #15102a;
-  --card-hover: #1d1538;
-  --text: #ffffff;
-  --muted: #aaa3bd;
+  --bg: #080511;
+  --panel: #110b20;
+  --card: #171027;
+  --text: #fff;
+  --muted: #aaa2b8;
   --pink: #ff4fc3;
-  --purple: #914cff;
-  --blue: #3d8bff;
-  --border: rgba(255,255,255,.1);
+  --purple: #8f4dff;
+  --blue: #4b8dff;
+  --border: rgba(255,255,255,.09);
 }
 
 * {
@@ -23,33 +22,19 @@ html {
 
 body {
   background:
-    radial-gradient(
-      circle at 85% 5%,
-      rgba(145,76,255,.22),
-      transparent 28rem
-    ),
-    radial-gradient(
-      circle at 5% 35%,
-      rgba(255,79,195,.12),
-      transparent 25rem
-    ),
+    radial-gradient(circle at 85% 0%, rgba(143,77,255,.2), transparent 28rem),
     var(--bg);
 
   color: var(--text);
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 
   line-height: 1.5;
-
-  overflow-x: hidden;
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 button {
@@ -57,173 +42,125 @@ button {
 }
 
 
-/* =========================
-   HEADER
-========================= */
+/* ================= HEADER ================= */
 
 .header {
-
   position: sticky;
-
   top: 0;
-
   z-index: 1000;
 
-  height: 70px;
+  height: 68px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 
   padding: 0 6%;
 
-  background: rgba(7,4,20,.82);
+  background: rgba(8,5,17,.88);
 
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(18px);
 
-  border-bottom:
-    1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .logo {
-
-  font-size: 1.25rem;
-
   font-weight: 900;
-
-  letter-spacing: -.5px;
+  font-size: 1.2rem;
 }
 
-.logo span:first-child {
+.logo span {
   color: var(--pink);
 }
 
-.logo .br {
-  color: var(--pink);
+.logo b {
+  color: #d09aff;
 }
 
 nav {
-
   display: flex;
-
   gap: 5px;
 }
 
 nav a {
-
-  padding: 9px 13px;
-
-  border-radius: 10px;
-
   color: var(--muted);
-
-  font-size: .9rem;
-
+  padding: 9px 13px;
+  border-radius: 9px;
   transition: .2s;
 }
 
 nav a:hover {
-
   color: white;
-
   background: rgba(255,255,255,.07);
 }
 
 .menu-button {
-
   display: none;
 
   background: none;
-
   border: 0;
 
   color: white;
 
   font-size: 25px;
-
-  cursor: pointer;
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* ================= HERO ================= */
 
 .hero {
+  min-height: 580px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 80px 8%;
 
   position: relative;
 
-  min-height: 620px;
-
-  max-width: 1400px;
-
-  margin: auto;
-
-  display: flex;
-
-  align-items: center;
-
-  padding:
-    90px 7%;
-
   overflow: hidden;
-}
-
-.hero-background {
-
-  position: absolute;
-
-  inset: 0;
 
   background:
     linear-gradient(
       90deg,
-      #070414 0%,
-      rgba(7,4,20,.82) 45%,
-      rgba(7,4,20,.25) 100%
+      #080511 0%,
+      rgba(8,5,17,.88) 45%,
+      rgba(8,5,17,.35) 100%
     );
 }
 
 .hero::after {
-
   content: "";
 
   position: absolute;
 
   width: 500px;
-
   height: 500px;
 
-  right: -120px;
-
-  top: 40px;
+  right: -150px;
+  top: 30px;
 
   background:
     radial-gradient(
       circle,
-      rgba(145,76,255,.35),
-      transparent 70%
+      rgba(143,77,255,.4),
+      transparent 65%
     );
 
   filter: blur(20px);
 }
 
 .hero-content {
-
   position: relative;
-
   z-index: 2;
 
-  max-width: 680px;
+  max-width: 650px;
 }
 
-.hero-label {
+.hero-content > span {
+  color: #d49dff;
 
-  color: #d8a9ff;
-
-  font-size: .75rem;
+  font-size: .72rem;
 
   font-weight: bold;
 
@@ -231,26 +168,24 @@ nav a:hover {
 }
 
 .hero h1 {
-
   margin-top: 15px;
 
   font-size:
     clamp(3rem, 7vw, 6.5rem);
 
-  line-height: .95;
+  line-height: .9;
 
   letter-spacing: -5px;
 }
 
 .hero h1 strong {
-
   display: block;
 
   background:
     linear-gradient(
       90deg,
       var(--pink),
-      #b967ff,
+      #b66aff,
       var(--blue)
     );
 
@@ -261,53 +196,26 @@ nav a:hover {
   background-clip: text;
 }
 
-.hero-content > p {
-
+.hero-content p {
   margin-top: 22px;
 
   color: var(--muted);
 
-  font-size: 1.08rem;
+  max-width: 520px;
 
-  max-width: 550px;
+  font-size: 1.05rem;
 }
 
-.hero-buttons {
+.main-button {
+  display: inline-block;
 
-  display: flex;
+  margin-top: 28px;
 
-  gap: 12px;
+  padding: 13px 20px;
 
-  margin-top: 30px;
-
-  flex-wrap: wrap;
-}
-
-.button {
-
-  display: inline-flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  padding: 13px 19px;
-
-  border-radius: 13px;
+  border-radius: 12px;
 
   font-weight: bold;
-
-  border: 1px solid var(--border);
-
-  transition: .25s;
-}
-
-.button:hover {
-
-  transform: translateY(-3px);
-}
-
-.button-primary {
 
   background:
     linear-gradient(
@@ -317,69 +225,59 @@ nav a:hover {
     );
 
   box-shadow:
-    0 12px 35px rgba(145,76,255,.3);
+    0 12px 35px rgba(143,77,255,.3);
+
+  transition: .25s;
 }
 
-.button-secondary {
-
-  background: rgba(255,255,255,.07);
+.main-button:hover {
+  transform: translateY(-3px);
 }
 
 
-/* =========================
-   SECTIONS
-========================= */
+/* ================= SEÇÕES ================= */
 
 .section {
-
   max-width: 1250px;
 
   margin: auto;
 
-  padding:
-    80px 30px;
+  padding: 75px 30px;
 }
 
-.section-heading {
-
-  margin-bottom: 35px;
+.section-title {
+  margin-bottom: 30px;
 }
 
-.section-heading > span {
+.section-title > span {
+  color: #d09aff;
 
-  color: #d29cff;
-
-  font-size: .72rem;
+  font-size: .7rem;
 
   font-weight: bold;
 
   letter-spacing: 3px;
 }
 
-.section-heading h2 {
-
-  margin-top: 8px;
+.section-title h2 {
+  margin-top: 7px;
 
   font-size:
-    clamp(2rem, 5vw, 3.2rem);
+    clamp(2rem, 5vw, 3.1rem);
 
-  line-height: 1.05;
+  line-height: 1;
 }
 
-.section-heading p {
+.section-title p {
+  margin-top: 8px;
 
   color: var(--muted);
-
-  margin-top: 8px;
 }
 
 
-/* =========================
-   CATEGORIAS
-========================= */
+/* ================= EPISÓDIOS ================= */
 
-.category-grid {
-
+.episode-grid {
   display: grid;
 
   grid-template-columns:
@@ -388,159 +286,41 @@ nav a:hover {
   gap: 18px;
 }
 
-.category-card {
-
-  padding: 28px;
-
-  border:
-    1px solid var(--border);
-
-  background: var(--card);
-
-  border-radius: 20px;
-
-  transition: .25s;
-}
-
-.category-card:hover {
-
-  background: var(--card-hover);
-
-  transform: translateY(-6px);
-
-  border-color:
-    rgba(145,76,255,.5);
-}
-
-.category-icon {
-
-  font-size: 2.5rem;
-
-  margin-bottom: 15px;
-}
-
-.category-card h3 {
-
-  font-size: 1.25rem;
-}
-
-.category-card p {
-
-  margin-top: 5px;
-
-  color: var(--muted);
-}
-
-
-/* =========================
-   TEMPORADAS
-========================= */
-
-.season-tabs {
-
-  display: flex;
-
-  gap: 8px;
-
-  overflow-x: auto;
-
-  padding-bottom: 15px;
-
-  margin-bottom: 25px;
-}
-
-.season-tab {
-
-  flex-shrink: 0;
-
-  padding: 10px 16px;
-
-  border-radius: 10px;
-
-  border:
-    1px solid var(--border);
-
-  background: var(--card);
-
-  color: var(--muted);
-
-  cursor: pointer;
-}
-
-.season-tab.active {
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--pink),
-      var(--purple)
-    );
-
-  color: white;
-
-  border-color: transparent;
-}
-
-
-/* =========================
-   EPISÓDIOS
-========================= */
-
-.episode-grid {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-
-  gap: 18px;
-}
-
 .episode-card {
-
   overflow: hidden;
 
   background: var(--card);
 
-  border:
-    1px solid var(--border);
+  border: 1px solid var(--border);
 
-  border-radius: 18px;
+  border-radius: 17px;
 
   transition: .25s;
 }
 
 .episode-card:hover {
-
   transform: translateY(-6px);
 
-  background: var(--card-hover);
-
-  box-shadow:
-    0 18px 50px rgba(0,0,0,.3);
+  background: #1c1430;
 }
 
-.episode-cover,
-.movie-cover {
+.episode-cover {
+  height: 230px;
 
   position: relative;
 
-  height: 210px;
+  padding: 12px;
 
   display: flex;
 
-  align-items: flex-start;
-
   justify-content: space-between;
 
-  padding: 13px;
+  align-items: flex-start;
 
   overflow: hidden;
 }
 
-.episode-cover::after,
-.movie-cover::after {
-
+.episode-cover::after {
   content: "";
 
   position: absolute;
@@ -549,86 +329,72 @@ nav a:hover {
 
   background:
     linear-gradient(
-      transparent 40%,
+      transparent 35%,
       rgba(0,0,0,.65)
     );
 }
 
-.episode-cover > span,
-.movie-cover > span {
-
+.episode-cover small {
   position: relative;
 
   z-index: 2;
 
   padding: 5px 8px;
 
-  border-radius: 7px;
+  border-radius: 6px;
 
   background: rgba(0,0,0,.55);
 
   font-size: .65rem;
-
-  font-weight: bold;
 }
 
-.cover-one {
+.cover-1 {
   background:
-    radial-gradient(circle at 70% 30%, #ff76d5, transparent 20%),
-    linear-gradient(135deg,#4c146d,#14164e);
+    radial-gradient(circle at 70% 25%, #ff63cf, transparent 22%),
+    linear-gradient(135deg,#36116a,#13194b);
 }
 
-.cover-two {
+.cover-2 {
   background:
-    radial-gradient(circle at 30% 30%, #55baff, transparent 22%),
-    linear-gradient(135deg,#172f70,#39105d);
+    radial-gradient(circle at 30% 25%, #4fbfff, transparent 22%),
+    linear-gradient(135deg,#14295e,#47115e);
 }
 
-.cover-three {
+.cover-3 {
   background:
-    radial-gradient(circle at 70% 30%, #ff5c9d, transparent 20%),
-    linear-gradient(135deg,#28105a,#70104e);
-}
-
-.cover-four {
-  background:
-    radial-gradient(circle at 40% 25%, #6c8cff, transparent 20%),
-    linear-gradient(135deg,#111b4e,#47166d);
+    radial-gradient(circle at 65% 30%, #ff609c, transparent 20%),
+    linear-gradient(135deg,#28105a,#68134e);
 }
 
 .play-button {
-
   position: absolute;
 
   z-index: 5;
 
   left: 50%;
-
   top: 50%;
 
   transform: translate(-50%,-50%);
 
   width: 58px;
-
   height: 58px;
 
   border-radius: 50%;
 
-  border: 1px solid rgba(255,255,255,.4);
+  border: 1px solid rgba(255,255,255,.35);
 
   background: rgba(0,0,0,.55);
 
   color: white;
 
-  font-size: 20px;
-
   cursor: pointer;
+
+  font-size: 19px;
 
   transition: .2s;
 }
 
 .play-button:hover {
-
   transform:
     translate(-50%,-50%)
     scale(1.12);
@@ -636,41 +402,27 @@ nav a:hover {
   background: var(--pink);
 }
 
-.episode-info,
-.movie-info {
-
-  padding: 18px;
+.episode-info {
+  padding: 17px;
 }
 
-.episode-info h3,
-.movie-info h3 {
-
+.episode-info h3 {
   font-size: 1rem;
 }
 
-.episode-info p,
-.movie-info p {
-
-  margin-top: 5px;
-
+.episode-info p {
   color: var(--muted);
 
   font-size: .82rem;
 
-  min-height: 40px;
+  margin-top: 4px;
 }
 
-.watch-button {
-
-  width: 100%;
-
-  margin-top: 15px;
-
-  padding: 10px;
-
+.watch-button,
+.row-watch {
   border: 0;
 
-  border-radius: 10px;
+  border-radius: 9px;
 
   background:
     linear-gradient(
@@ -686,61 +438,162 @@ nav a:hover {
   cursor: pointer;
 }
 
+.watch-button {
+  width: 100%;
 
-/* =========================
-   PLAYER
-========================= */
+  margin-top: 14px;
 
-.player-section {
+  padding: 10px;
+}
 
+
+/* ================= TEMPORADAS ================= */
+
+.season-list {
+  display: flex;
+
+  gap: 8px;
+
+  overflow-x: auto;
+
+  padding-bottom: 15px;
+}
+
+.season {
+  flex-shrink: 0;
+
+  padding: 10px 16px;
+
+  border-radius: 9px;
+
+  border: 1px solid var(--border);
+
+  background: var(--card);
+
+  color: var(--muted);
+
+  cursor: pointer;
+}
+
+.season.active {
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--pink),
+      var(--purple)
+    );
+
+  border-color: transparent;
+}
+
+.episode-list {
+  display: grid;
+
+  gap: 9px;
+
+  margin-top: 15px;
+}
+
+.episode-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+  padding: 15px;
+
+  border-radius: 12px;
+
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  transition: .2s;
+}
+
+.episode-row:hover {
+  background: #1b1330;
+}
+
+.episode-number {
+  font-size: 1.5rem;
+
+  font-weight: bold;
+
+  color: #d39cff;
+
+  min-width: 45px;
+}
+
+.episode-row div:nth-child(2) {
+  flex: 1;
+}
+
+.episode-row h3 {
+  font-size: .95rem;
+}
+
+.episode-row p {
+  color: var(--muted);
+
+  font-size: .78rem;
+}
+
+.row-watch {
+  padding: 9px 13px;
+}
+
+
+/* ================= PLAYER ================= */
+
+.player {
   max-width: 1100px;
 
   margin: 20px auto;
 
-  padding: 25px 30px;
+  padding: 22px;
 
-  border:
-    1px solid var(--border);
+  border-radius: 18px;
 
-  border-radius: 20px;
+  background: #0e081c;
 
-  background: #0c071c;
+  border: 1px solid var(--border);
 }
 
 .hidden {
   display: none;
 }
 
-.player-header {
-
+.player-top {
   display: flex;
 
   justify-content: space-between;
 
   align-items: center;
 
-  margin-bottom: 20px;
+  margin-bottom: 17px;
 }
 
-.player-header span {
-
+.player-top span {
   color: #d19aff;
 
-  font-size: .7rem;
+  font-size: .65rem;
 
   letter-spacing: 2px;
 }
 
-.player-header h2 {
-
+.player-top h2 {
   margin-top: 4px;
+
+  font-size: 1.3rem;
 }
 
 #closePlayer {
-
-  width: 40px;
-
-  height: 40px;
+  width: 38px;
+  height: 38px;
 
   border-radius: 50%;
 
@@ -753,373 +606,206 @@ nav a:hover {
   cursor: pointer;
 }
 
-.video-container {
-
+.video-box {
   width: 100%;
 
   aspect-ratio: 16 / 9;
 
-  background: #030207;
+  background: #020107;
 
-  border-radius: 15px;
+  border-radius: 12px;
 
   overflow: hidden;
 }
 
-.video-placeholder {
-
+.video-message {
   height: 100%;
 
   display: grid;
 
   place-items: center;
 
+  align-content: center;
+
   text-align: center;
 
   background:
     radial-gradient(
       circle,
-      rgba(145,76,255,.2),
-      transparent 60%
+      rgba(143,77,255,.18),
+      transparent 65%
     );
 }
 
-.video-placeholder span {
-
+.video-message div {
   font-size: 3rem;
 
   color: var(--pink);
 }
 
-.video-placeholder h3 {
-
-  margin-top: 10px;
-}
-
-.video-placeholder p {
-
+.video-message p {
   color: var(--muted);
 
-  font-size: .85rem;
+  font-size: .8rem;
 
   margin-top: 5px;
 }
 
 
-/* =========================
-   FILMES
-========================= */
-
-.movies-section {
-
-  max-width: none;
-
-  padding-left: 6%;
-
-  padding-right: 6%;
-
-  background:
-    linear-gradient(
-      180deg,
-      transparent,
-      rgba(145,76,255,.06),
-      transparent
-    );
-}
+/* ================= FILMES ================= */
 
 .movie-grid {
-
   display: grid;
 
   grid-template-columns:
     repeat(3, 1fr);
 
-  gap: 20px;
-
-  max-width: 1250px;
+  gap: 18px;
 }
 
 .movie-card {
-
   overflow: hidden;
 
   background: var(--card);
 
-  border:
-    1px solid var(--border);
+  border: 1px solid var(--border);
 
-  border-radius: 20px;
+  border-radius: 17px;
 }
 
 .movie-cover {
+  height: 280px;
 
-  height: 290px;
-}
+  position: relative;
 
-.movie-one {
-
-  background:
-    radial-gradient(circle at 50% 25%, #ff4fc3, transparent 20%),
-    linear-gradient(135deg,#291064,#15134e);
-}
-
-.movie-two {
+  padding: 12px;
 
   background:
-    radial-gradient(circle at 40% 25%, #55baff, transparent 20%),
-    linear-gradient(135deg,#101b55,#55156e);
+    radial-gradient(circle at 50% 25%, #ff55c8, transparent 20%),
+    linear-gradient(135deg,#28105c,#10184e);
 }
 
+.movie-cover > span {
+  position: relative;
 
-/* =========================
-   PERSONAGENS
-========================= */
+  z-index: 2;
 
-.character-grid {
+  padding: 5px 8px;
 
-  display: grid;
+  background: rgba(0,0,0,.5);
 
-  grid-template-columns:
-    repeat(4, 1fr);
-
-  gap: 18px;
-}
-
-.character-card {
-
-  overflow: hidden;
-
-  border:
-    1px solid var(--border);
-
-  background: var(--card);
-
-  border-radius: 18px;
-}
-
-.character-image {
-
-  height: 230px;
-
-  display: grid;
-
-  place-items: center;
-
-  font-size: 80px;
-}
-
-.ladybug {
-  background: linear-gradient(135deg,#ff315c,#6d123e);
-}
-
-.cat {
-  background: linear-gradient(135deg,#1d7dff,#101332);
-}
-
-.cerise {
-  background: linear-gradient(135deg,#a139ff,#e853c4);
-}
-
-.argos {
-  background: linear-gradient(135deg,#5434bd,#168dff);
-}
-
-.character-card > div:last-child {
-
-  padding: 17px;
-}
-
-.character-card small {
-
-  color: #d29cff;
+  border-radius: 6px;
 
   font-size: .65rem;
-
-  letter-spacing: 2px;
-
-  font-weight: bold;
 }
 
-.character-card h3 {
+.movie-info {
+  padding: 18px;
+}
 
-  margin-top: 4px;
+.movie-info p {
+  color: var(--muted);
+
+  font-size: .82rem;
+
+  margin-top: 5px;
 }
 
 
-/* =========================
-   NOVIDADES
-========================= */
+/* ================= NOVIDADES ================= */
 
-.news-section {
-
-  background:
-    radial-gradient(
-      circle at 50%,
-      rgba(255,79,195,.07),
-      transparent 45%
-    );
-}
-
-.news-grid {
-
+.news {
   display: grid;
 
   grid-template-columns:
-    repeat(3,1fr);
+    repeat(2,1fr);
 
   gap: 18px;
 }
 
-.news-grid article {
-
+.news article {
   padding: 25px;
+
+  border-radius: 17px;
 
   background: var(--card);
 
-  border:
-    1px solid var(--border);
-
-  border-radius: 18px;
+  border: 1px solid var(--border);
 }
 
-.news-grid article > span {
+.news article span {
+  color: #d29aff;
 
-  color: #d29cff;
-
-  font-size: .7rem;
+  font-size: .68rem;
 
   font-weight: bold;
 
   letter-spacing: 2px;
 }
 
-.news-grid h3 {
-
+.news h3 {
   margin-top: 10px;
 }
 
-.news-grid p {
-
+.news p {
   color: var(--muted);
 
-  margin-top: 6px;
+  margin-top: 5px;
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* ================= FOOTER ================= */
 
 footer {
-
   display: flex;
+
+  align-items: center;
 
   justify-content: space-between;
 
-  gap: 30px;
+  gap: 20px;
 
   flex-wrap: wrap;
 
-  padding: 45px 6%;
+  padding: 40px 6%;
 
-  border-top:
-    1px solid var(--border);
+  border-top: 1px solid var(--border);
 
   color: var(--muted);
 }
 
-footer .logo {
 
-  color: white;
+/* ================= CELULAR ================= */
 
-  display: block;
-
-  margin-bottom: 8px;
-}
-
-.footer-links {
-
-  display: flex;
-
-  gap: 18px;
-}
-
-.footer-links a:hover {
-
-  color: white;
-}
-
-
-/* =========================
-   TABLET
-========================= */
-
-@media(max-width: 950px) {
-
-  .episode-grid {
-
-    grid-template-columns:
-      repeat(2,1fr);
-  }
-
-  .character-grid {
-
-    grid-template-columns:
-      repeat(2,1fr);
-  }
-
-  .category-grid {
-
-    grid-template-columns:
-      repeat(3,1fr);
-  }
-
-}
-
-
-/* =========================
-   CELULAR
-========================= */
-
-@media(max-width: 700px) {
+@media(max-width: 750px) {
 
   .header {
-
-    height: 64px;
-
     padding: 0 18px;
   }
 
   .menu-button {
-
     display: block;
   }
 
   nav {
-
     display: none;
 
     position: absolute;
 
-    top: 70px;
+    top: 65px;
 
     left: 12px;
-
     right: 12px;
-
-    padding: 12px;
 
     flex-direction: column;
 
-    background: #100721;
+    padding: 10px;
 
-    border:
-      1px solid var(--border);
+    border-radius: 14px;
 
-    border-radius: 16px;
+    background: #100820;
 
-    box-shadow:
-      0 20px 50px rgba(0,0,0,.5);
+    border: 1px solid var(--border);
   }
 
   nav.open {
@@ -1131,48 +817,23 @@ footer .logo {
   }
 
   .hero {
+    min-height: 500px;
 
-    min-height: 560px;
-
-    padding:
-      70px 22px;
-
-    text-align: center;
+    padding: 65px 22px;
   }
 
   .hero h1 {
-
     font-size:
       clamp(3rem,14vw,5rem);
 
     letter-spacing: -3px;
   }
 
-  .hero-content > p {
-
-    margin-left: auto;
-
-    margin-right: auto;
-  }
-
-  .hero-buttons {
-
-    justify-content: center;
-  }
-
   .section {
-
-    padding:
-      65px 18px;
-  }
-
-  .category-grid {
-
-    grid-template-columns: 1fr;
+    padding: 60px 18px;
   }
 
   .episode-grid {
-
     grid-template-columns:
       repeat(2,1fr);
 
@@ -1180,73 +841,49 @@ footer .logo {
   }
 
   .episode-cover {
+    height: 160px;
+  }
 
-    height: 150px;
+  .episode-row {
+    gap: 10px;
+  }
+
+  .row-watch {
+    padding: 8px 9px;
   }
 
   .movie-grid {
-
     grid-template-columns: 1fr;
   }
 
-  .character-grid {
-
-    grid-template-columns:
-      repeat(2,1fr);
-
-    gap: 12px;
-  }
-
-  .character-image {
-
-    height: 180px;
-
-    font-size: 60px;
-  }
-
-  .news-grid {
-
+  .news {
     grid-template-columns: 1fr;
   }
 
-  .player-section {
-
+  .player {
     margin: 15px;
-
     padding: 15px;
   }
 
 }
 
 
-/* =========================
-   CELULAR PEQUENO
-========================= */
-
-@media(max-width: 420px) {
+@media(max-width: 430px) {
 
   .episode-grid {
-
     grid-template-columns: 1fr;
   }
 
   .episode-cover {
-
-    height: 190px;
+    height: 200px;
   }
 
-  .character-image {
-
-    height: 160px;
+  .episode-row {
+    flex-wrap: wrap;
   }
 
-  .footer-links {
-
+  .row-watch {
     width: 100%;
-
-    flex-direction: column;
-
-    gap: 7px;
   }
 
-}
+  }
